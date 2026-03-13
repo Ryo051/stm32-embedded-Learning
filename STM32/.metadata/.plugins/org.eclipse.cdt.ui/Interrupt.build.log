@@ -1,17 +1,10 @@
-08:30:22 **** Build of configuration Debug for project Interrupt ****
+09:55:06 **** Incremental Build of configuration Debug for project Interrupt ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Interrupt.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\Interrupt\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Interrupt.elf
- 
 arm-none-eabi-size  Interrupt.elf 
-arm-none-eabi-objdump -h -S Interrupt.elf  > "Interrupt.list"
    text	   data	    bss	    dec	    hex	filename
   11332	     12	   1796	  13140	   3354	Interrupt.elf
 Finished building: default.size.stdout
  
-Finished building: Interrupt.list
- 
 
-08:30:22 Build Finished. 0 errors, 0 warnings. (took 711ms)
+09:55:06 Build Finished. 0 errors, 0 warnings. (took 259ms)
 
