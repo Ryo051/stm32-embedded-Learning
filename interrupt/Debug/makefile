@@ -60,8 +60,8 @@ all: main-build
 main-build: Interrupt.elf secondary-outputs
 
 # Tool invocations
-Interrupt.elf Interrupt.map: $(OBJS) $(USER_OBJS) C:\Users\hage9\Documents\Lernmaterial\ESselbst\interrupt\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Interrupt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\interrupt\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Interrupt.elf Interrupt.map: $(OBJS) $(USER_OBJS) C:\Users\hage9\Documents\Lernmaterial\ESselbst\Interrupt\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Interrupt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\Interrupt\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

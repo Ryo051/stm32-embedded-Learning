@@ -1,0 +1,10 @@
+08:51:43 **** Incremental Build of configuration Debug for project ADCPWM ****
+make -j12 all 
+arm-none-eabi-size  ADCPWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14304	     12	   1748	  16064	   3ec0	ADCPWM.elf
+Finished building: default.size.stdout
+ 
+
+08:51:43 Build Finished. 0 errors, 0 warnings. (took 255ms)
+
