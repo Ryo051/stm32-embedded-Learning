@@ -1,8 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:uart,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Interrupt,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PWM,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ADCPWM
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:uart,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Interrupt,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PWM,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ADCPWM,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:OLEDI2C
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ADCPWM/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ADCPWM/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Interrupt/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Interrupt/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test\ Debug/activeLaunchMode=run

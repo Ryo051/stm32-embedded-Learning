@@ -1,0 +1,10 @@
+07:14:16 **** Incremental Build of configuration Debug for project OLEDI2C ****
+make -j12 all 
+arm-none-eabi-size  OLEDI2C.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16392	    104	   2136	  18632	   48c8	OLEDI2C.elf
+Finished building: default.size.stdout
+ 
+
+07:14:16 Build Finished. 0 errors, 0 warnings. (took 248ms)
+
