@@ -1,0 +1,10 @@
+07:41:41 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+
+07:41:42 Build Finished. 0 errors, 0 warnings. (took 259ms)
+

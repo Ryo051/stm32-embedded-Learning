@@ -1,21 +1,326 @@
-07:38:42 **** Incremental Build of configuration Debug for project OLEDI2C ****
+07:07:15 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "OLEDI2C.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\OLEDI2C\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OLEDI2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: OLEDI2C.elf
+../Core/Src/main.c: In function 'MX_I2C1_Init':
+../Core/Src/main.c:217:31: error: 'I2C_ADDRESSINGMODE_8BIT' undeclared (first use in this function); did you mean 'I2C_ADDRESSINGMODE_7BIT'?
+  217 |   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_8BIT;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                               I2C_ADDRESSINGMODE_7BIT
+../Core/Src/main.c:217:31: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+07:07:40 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
  
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21272	    112	   3248	  24632	   6038	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:07:49 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21272	    112	   3248	  24632	   6038	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:13:02 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21280	    112	   3248	  24640	   6040	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:13:05 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21280	    112	   3248	  24640	   6040	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:13:43 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:13:46 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:14:30 **** Incremental Build of configuration Debug for project ADCPWM ****
+make -j12 all 
+arm-none-eabi-size  ADCPWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21496	     92	   2228	  23816	   5d08	ADCPWM.elf
+Finished building: default.size.stdout
+ 
+07:14:30 **** Incremental Build of configuration Debug for project Interrupt ****
+make -j12 all 
+arm-none-eabi-size  Interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11332	     12	   1796	  13140	   3354	Interrupt.elf
+Finished building: default.size.stdout
+ 
+07:14:31 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:14:32 **** Incremental Build of configuration Debug for project OLEDI2C ****
+make -j12 all 
 arm-none-eabi-size  OLEDI2C.elf 
-arm-none-eabi-objdump -h -S OLEDI2C.elf  > "OLEDI2C.list"
    text	   data	    bss	    dec	    hex	filename
   21072	    112	   3168	  24352	   5f20	OLEDI2C.elf
 Finished building: default.size.stdout
  
-Finished building: OLEDI2C.list
+07:14:32 **** Incremental Build of configuration Debug for project PWM ****
+make -j12 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10300	     12	   1644	  11956	   2eb4	PWM.elf
+Finished building: default.size.stdout
  
-07:38:49 **** Incremental Build of configuration Debug for project OLEDI2C ****
+07:14:32 **** Incremental Build of configuration Debug for project Test ****
+make -j12 all 
+arm-none-eabi-size  Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9604	     12	   1716	  11332	   2c44	Test.elf
+Finished building: default.size.stdout
+ 
+07:14:33 **** Incremental Build of configuration Debug for project uart ****
+make -j12 all 
+arm-none-eabi-size  uart.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9948	     12	   1716	  11676	   2d9c	uart.elf
+Finished building: default.size.stdout
+ 
+07:14:35 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:16:15 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:16:20 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:19:35 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:19:37 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:23:53 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    116	   3252	  25292	   62cc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:23:55 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    116	   3252	  25292	   62cc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:26:20 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  23484	    116	   3252	  26852	   68e4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:26:28 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23484	    116	   3252	  26852	   68e4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:38:26 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  23484	    112	   3248	  26844	   68dc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:38:29 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23484	    112	   3248	  26844	   68dc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:39:28 **** Incremental Build of configuration Debug for project ADCPWM ****
+make -j12 all 
+arm-none-eabi-size  ADCPWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21496	     92	   2228	  23816	   5d08	ADCPWM.elf
+Finished building: default.size.stdout
+ 
+07:39:28 **** Incremental Build of configuration Debug for project Interrupt ****
+make -j12 all 
+arm-none-eabi-size  Interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11332	     12	   1796	  13140	   3354	Interrupt.elf
+Finished building: default.size.stdout
+ 
+07:39:29 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  23484	    112	   3248	  26844	   68dc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:39:30 **** Incremental Build of configuration Debug for project OLEDI2C ****
 make -j12 all 
 arm-none-eabi-size  OLEDI2C.elf 
    text	   data	    bss	    dec	    hex	filename
   21072	    112	   3168	  24352	   5f20	OLEDI2C.elf
+Finished building: default.size.stdout
+ 
+07:39:30 **** Incremental Build of configuration Debug for project PWM ****
+make -j12 all 
+arm-none-eabi-size  PWM.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10300	     12	   1644	  11956	   2eb4	PWM.elf
+Finished building: default.size.stdout
+ 
+07:39:30 **** Incremental Build of configuration Debug for project Test ****
+make -j12 all 
+arm-none-eabi-size  Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9604	     12	   1716	  11332	   2c44	Test.elf
+Finished building: default.size.stdout
+ 
+07:39:31 **** Incremental Build of configuration Debug for project uart ****
+make -j12 all 
+arm-none-eabi-size  uart.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9948	     12	   1716	  11676	   2d9c	uart.elf
+Finished building: default.size.stdout
+ 
+07:39:32 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23484	    112	   3248	  26844	   68dc	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+07:41:38 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G070xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MotionCapture_uart_i2c_spi.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotionCapture_uart_i2c_spi.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotionCapture_uart_i2c_spi.elf
+ 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+arm-none-eabi-objdump -h -S MotionCapture_uart_i2c_spi.elf  > "MotionCapture_uart_i2c_spi.list"
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotionCapture_uart_i2c_spi.list
+ 
+07:41:41 **** Incremental Build of configuration Debug for project MotionCapture_uart_i2c_spi ****
+make -j12 all 
+arm-none-eabi-size  MotionCapture_uart_i2c_spi.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21924	    112	   3248	  25284	   62c4	MotionCapture_uart_i2c_spi.elf
 Finished building: default.size.stdout
  
