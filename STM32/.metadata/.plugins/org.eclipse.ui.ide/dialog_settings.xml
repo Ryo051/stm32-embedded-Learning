@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\ADCPWM"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\SPImaster_test"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\ADCPWM"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\PWM"/>
@@ -52,8 +53,8 @@
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\LEDblink\LEDblinkMX"/>
 		</list>
 		<section name="STSmartImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="853"/>
-			<item key="DIALOG_Y_ORIGIN" value="520"/>
+			<item key="DIALOG_X_ORIGIN" value="211"/>
+			<item key="DIALOG_Y_ORIGIN" value="511"/>
 			<item key="DIALOG_WIDTH" value="1190"/>
 			<item key="DIALOG_HEIGHT" value="772"/>
 			<item key="DIALOG_FONT_NAME" value="1|Yu Gothic UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Yu Gothic UI"/>

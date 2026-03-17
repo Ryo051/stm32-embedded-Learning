@@ -3,8 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
-		<item value="7B"/>
+		<item value="uint8_t prev_motion_state = GPIO_PIN_RESET;"/>
 		<item value="htim3"/>
+		<item value="7B"/>
 		<item value="LD4"/>
 	</list>
 </section>
