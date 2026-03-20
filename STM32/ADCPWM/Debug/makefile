@@ -60,8 +60,8 @@ all: main-build
 main-build: ADCPWM.elf secondary-outputs
 
 # Tool invocations
-ADCPWM.elf ADCPWM.map: $(OBJS) $(USER_OBJS) C:\Users\hage9\Documents\Lernmaterial\ESselbst\ADCPWM\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADCPWM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\ADCPWM\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADCPWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADCPWM.elf ADCPWM.map: $(OBJS) $(USER_OBJS) C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\ADCPWM\STM32G070RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADCPWM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\ADCPWM\STM32G070RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADCPWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

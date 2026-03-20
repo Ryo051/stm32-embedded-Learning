@@ -1,0 +1,10 @@
+10:12:24 **** Incremental Build of configuration Debug for project FreeRTOS_uart_led ****
+make -j12 all 
+arm-none-eabi-size  FreeRTOS_uart_led.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19980	     16	   8200	  28196	   6e24	FreeRTOS_uart_led.elf
+Finished building: default.size.stdout
+ 
+
+10:12:25 Build Finished. 0 errors, 0 warnings. (took 330ms)
+

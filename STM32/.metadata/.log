@@ -3179,3 +3179,33 @@ java.lang.Exception: The project description file (.project) for 'ADCPWM' is mis
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-03-17 08:43:11.678
 !MESSAGE Indexed 'ADCPWM' (33 sources, 159 headers) in 2.85 sec: 15,513 declarations; 81,444 references; 3 unresolved inclusions; 26 syntax errors; 173 unresolved names (0.18%)
+!SESSION 2026-03-20 09:52:33.750 -----------------------------------------------
+eclipse.buildId=Version 2.1.0
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-20 09:52:41.041
+!MESSAGE Log4j2 initialized with config file C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-20 09:52:46.830
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-20 09:52:48.787
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-20 09:52:48.788
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-20 09:53:48.940
+!MESSAGE Indexed 'FreeRTOS_uart_led' (32 sources, 141 headers) in 2.52 sec: 13,041 declarations; 54,071 references; 3 unresolved inclusions; 136 syntax errors; 172 unresolved names (0.26%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-20 10:06:18.602
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-20 10:06:18.604
+!MESSAGE port: COM3
