@@ -43,6 +43,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\HygroThermoMeterForGuitar"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\STM32\FreeRTOS_uart_led"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\SPImaster_test"/>
 			<item value="C:\Users\hage9\Documents\Lernmaterial\ESselbst\MotionCapture_uart_i2c_spi"/>
