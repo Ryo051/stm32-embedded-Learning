@@ -24,5 +24,8 @@
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=/Users/ryotasuke/Desktop/Programm/stm32-embedded-Learning/ESP/Lightsystem_withMotor/build"
-  ]
+  ],
+  "idf.currentSetup": "/Users/ryotasuke/.espressif/v5.3.6/esp-idf",
+  "idf.flashType": "UART",
+  "idf.port": "/dev/tty.usbserial-14230"
 }
