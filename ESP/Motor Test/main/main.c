@@ -3,10 +3,10 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 
-#define IN1_PIN GPIO_NUM_25
-#define IN2_PIN GPIO_NUM_26
-#define IN3_PIN GPIO_NUM_27
-#define IN4_PIN GPIO_NUM_14
+#define IN1_PIN GPIO_NUM_26
+#define IN2_PIN GPIO_NUM_25
+#define IN3_PIN GPIO_NUM_33
+#define IN4_PIN GPIO_NUM_32
 
 const uint8_t half_step_patterns[8] = {
     0b1000,
