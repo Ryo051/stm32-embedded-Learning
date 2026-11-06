@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+
+#define IN1_PIN GPIO_NUM_25
+#define IN2_PIN GPIO_NUM_26
+#define IN3_PIN GPIO_NUM_27
+#define IN4_PIN GPIO_NUM_14
+
+const uint8_t half_step_patterns[8] = {
+    0b1000,
+    0b1100, // IN1, IN2 が HIGH
+    0b0100,
+    0b0110, // IN2, IN3 が HIGH
+    0b0010,
+    0b0011, // IN3, IN4 が HIG
+    0b0001,
+    0b1001  // IN4, IN1 が HIGH
+};
+void set_stepper_pins(uint8_t pattern){//Einstellung der Ausgabe jeder Pin 
+    gpio_set_level(IN1_PIN, (pattern >> 0) & 0x01);
+    gpio_set_level(IN2_PIN, (pattern >> 1) & 0x01);
+    gpio_set_level(IN3_PIN, (pattern >> 2) & 0x01);
+    gpio_set_level(IN4_PIN, (pattern >> 3) & 0x01);
+}
+void init(void){
+    gpio_config_t io_conf = {
+        .pin_bit_mask = (1ULL << IN1_PIN) | (1ULL << IN2_PIN) | 
+                        (1ULL << IN3_PIN) | (1ULL << IN4_PIN),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config(&io_conf);
+    printf("start¥n");
+}
+
+void app_main(void)
+{
+    
+    init();
+    int step_index = 0;
+
+    while(1){
+        set_stepper_pins(half_step_patterns[step_index]);
+        step_index = (step_index+1)%8;
+
+        vTaskDelay(pdMS_TO_TICKS(20));
+    }
+}
