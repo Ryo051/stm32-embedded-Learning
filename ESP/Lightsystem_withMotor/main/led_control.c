@@ -11,8 +11,8 @@ static led_strip_handle_t led_strip;
 /*
 　This programm is for core0.
 */
-void led_control(void *pvParameters) {
-    // Initialisierung des LED-Streifens, RMT-Konfiguration
+
+void init_led_strip(void) {
     led_strip_config_t strip_config = {
         .strip_gpio_num = LED_STRIP_GPIO,
         .max_leds = LED_STRIP_NUM,
@@ -21,6 +21,12 @@ void led_control(void *pvParameters) {
     led_strip_rmt_config_t rmt_config = {
         .resolution_hz = 10 * 1000 * 1000, // 10MHz
     };
+    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
+}
+void led_control(void *pvParameters) {
+    // Initialisierung des LED-Streifens, RMT-Konfiguration
+    init_led_strip();
+    
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
 
     while (1) {

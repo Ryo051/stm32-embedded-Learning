@@ -6,7 +6,7 @@
 
 void app_main(void) {
     xTaskCreatePinnedToCore(led_control, "led_control", 2048, NULL, 5, NULL, 0);
-    while (1) {
-        vTaskDelay(pdMS_TO_TICKS(100)); // メインタスクは1秒ごとに待機
-    }
+    xTaskCreatePinnedToCore(motor_control, "motor_control", 2048, NULL, 5, NULL, 1);
+
+    vTaskDelete(NULL); // Main task is deleted after creating other tasks
 }
