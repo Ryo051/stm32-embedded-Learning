@@ -26,8 +26,8 @@ void init_led_strip(void) {
 void led_control(void *pvParameters) {
     // Initialisierung des LED-Streifens, RMT-Konfiguration
     init_led_strip();
-    
-    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
+
+    //ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
 
     while (1) {
         for (int i = 0; i < LED_STRIP_NUM; i++) {

@@ -2,6 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
+#include "motor_control.h"
 
 #define IN1_PIN GPIO_NUM_26
 #define IN2_PIN GPIO_NUM_25
