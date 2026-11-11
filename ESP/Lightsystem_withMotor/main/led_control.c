@@ -1,10 +1,20 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdint.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "led_strip.h"
 
 #define LED_STRIP_GPIO 14      // LEDのDATAピンがつながるGPIO
 #define LED_STRIP_NUM  10     // 接続しているLEDの数
+
+typedef struct {
+    uint8_t target_val;  // 0~255
+    uint8_t pwm_step;   // 0~9
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+} Led_state_t;
 
 const uint8_t GAMMA_INT_LUT[256] = {
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -87,6 +97,24 @@ void init_led_strip(void) {
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
 }
 
+void calculate_fixed_color_pwm(Led_state_t *led_state)
+{
+    // 1. 整数ベース値と小数パルス数を取得（どちらも配列参照で1クロック）
+    uint16_t base_scale = GAMMA_INT_LUT[led_state->target_val];
+    uint8_t  frac_pulse = GAMMA_FRAC_LUT[led_state->target_val];
+
+    // 2. パルスステップが端数閾値未満なら、全体のスケールを +1 補完
+    if (led_state->pwm_step < frac_pulse) {
+        base_scale += 1;
+    }
+
+    // 3. スケール(0~256)と固定色(255, 100, 5)を乗算して8bitシフト(256除算)
+    //    浮動小数点を使わず、純粋な整数演算のみで超高速化
+    led_state->r = (uint8_t)((base_scale * COLOR_R) >> 8);
+    led_state->g = (uint8_t)((base_scale * COLOR_G) >> 8);
+    led_state->b = (uint8_t)((base_scale * COLOR_B) >> 8);
+}
+/*
 void calculate_fixed_color_pwm(uint8_t input_val, uint8_t pwm_step, 
                                 uint8_t *out_r, uint8_t *out_g, uint8_t *out_b) 
 {
@@ -104,23 +132,34 @@ void calculate_fixed_color_pwm(uint8_t input_val, uint8_t pwm_step,
     *out_r = (uint8_t)((base_scale * COLOR_R) >> 8);
     *out_g = (uint8_t)((base_scale * COLOR_G) >> 8);
     *out_b = (uint8_t)((base_scale * COLOR_B) >> 8);
+}*/
+
+void init_led_array(Led_state_t *led_state, size_t num_leds) {
+    memset(led_state, 0, sizeof(Led_state_t) * num_leds);
 }
 
 void led_control(void *pvParameters) {
-   
+    
+    Led_state_t led_state[LED_STRIP_NUM]; // Array zur Speicherung des LED-Zustands
+    memset(led_state, 0, sizeof(led_state)); // Initialisierung des LED-Zustands
+
+
+    // Initialisierung
+
+
     init_led_strip(); // Initialisierung des LED-Streifens, RMT-Konfiguration
-    uint8_t r = 0, g = 0, b = 0; // PWM-Werte für Rot, Grün und Blau
-    uint8_t pwm_step = 0; // PWM-Stufe (0~9)
 
-    uint8_t target_val = 0; // 
-
+    // Hauptschleife zur Steuerung der LEDs
     while (1) {
-        calculate_fixed_color_pwm(target_val, pwm_step, &r, &g, &b); // Beispielaufruf der Funktion zur Berechnung der PWM-Werte
+        
         for (int i = 0; i < LED_STRIP_NUM; i++) {
-                led_strip_set_pixel(led_strip, i, g, r, b);              
+            calculate_fixed_color_pwm(&led_state[i]); // Beispielaufruf der Funktion zur Berechnung der PWM-Werte
+            led_strip_set_pixel(led_strip, i, led_state[i].g, led_state[i].r, led_state[i].b);              
+            led_state[i].target_val = (led_state[i].target_val + 1) % 256; // Increment target value for next iteration
+            led_state[i].pwm_step = (led_state[i].pwm_step + 1) % 10; // Increment PWM step for next iteration
         }
-        target_val = (target_val + 1) % 256; // Increment target value for next iteration
-        pwm_step = (pwm_step + 1) % 10; // Increment PWM step for next iteration
+        
+        
 
         led_strip_refresh(led_strip);
         vTaskDelay(pdMS_TO_TICKS(10));
